@@ -34,6 +34,7 @@ import {
   addNewAdmin,
   addNewDoctor,
   getAllDoctors,
+  getAllUsers,  // Import the new controller function
   getUserDetails,
   login,
   logoutAdmin,
@@ -53,6 +54,7 @@ router.post("/login", login);
 router.post("/admin/addnew", addNewAdmin);
 router.post("/doctor/addnew", isAdminAuthenticated, addNewDoctor);
 router.get("/doctors", getAllDoctors);
+router.get("/users", getAllUsers); // New route to get all users
 router.get("/patient/me", isPatientAuthenticated, getUserDetails);
 router.get("/admin/me", isAdminAuthenticated, getUserDetails);
 router.get("/patient/logout", isPatientAuthenticated, logoutPatient);
